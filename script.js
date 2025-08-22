@@ -276,7 +276,7 @@
     "category": "ફળ-ફૂલ",
     "count": 12,
     "benefits": "ફૂલ વાળની સારસંભાળમાં; તિતલીઓ/મધમાખીઓને આકર્ષે.",
-    "image": "images/fruitsflowers/jasud.jpg"
+    "image": "images/fruitsflowers/jashud.jpg"
   },
  
  {
@@ -292,7 +292,7 @@
     "category": "ફળ-ફૂલ",
     "count": 2,
     "benefits": "સુગંધિત સફેદ ફૂલ; નાઈટ-બ્લૂમિંગ જાતો શાંત સુગંધ આપે.",
-    "image": "images/fruitsflowers/tagri.jpg"
+    "image": "images/fruitsflowers/tagari.jpg"
   },
 
   {
@@ -469,3 +469,4 @@ function render(){
 
 search.addEventListener('input', render);
 render();
+
