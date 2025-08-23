@@ -372,7 +372,7 @@
     "category": "ઔષધી",
     "count": 1,
     "benefits": "લોકચિકિત્સામાં ઉપયોગ; ગ્રાઉન્ડ કવર તરીકે પણ.",
-    "image": "images/medicinal/chanithi.jpg"
+    "image": "images/medicinal/chanothi.jpg"
   },
  
  {
@@ -469,4 +469,5 @@ function render(){
 
 search.addEventListener('input', render);
 render();
+
 
