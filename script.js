@@ -392,82 +392,117 @@
   }
 ];
 
+// ====== Data & DOM refs ======
+
 
 const grid = document.getElementById('grid');
 const search = document.getElementById('search');
 const stats = document.getElementById('stats');
 
 const modal = document.getElementById('modal');
-
 const modalImg = document.getElementById('modalImg');
-
 const modalTitle = document.getElementById('modalTitle');
 const modalCat = document.getElementById('modalCat');
 const modalCount = document.getElementById('modalCount');
-
 const modalBenefits = document.getElementById('modalBenefits');
 const modalClose = document.getElementById('modalClose');
 const modalX = document.getElementById('modalX');
 
-
-function openModal(p){
+// ====== Modal ======
+function openModal(p) {
   modalImg.src = p.image;
   modalTitle.textContent = p.name;
-  modalCat.textContent = p.category;
+  modalCat.textContent = `વર્ગ: ${p.category}`;
   modalCount.textContent = `સંખ્યા: ${p.count}`;
-
-  modalBenefits.textContent = p.benefits;
+  modalBenefits.textContent = `ફાયદા: ${p.benefits}`;
   modal.classList.remove('hidden');
 }
-
-function closeModal(){
+function closeModal() {
   modal.classList.add('hidden');
 }
+modalClose && modalClose.addEventListener('click', closeModal);
+modalX && modalX.addEventListener('click', closeModal);
+window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-modalClose.addEventListener('click', closeModal);
+// ====== Grid Render (single source of truth) ======
+function render() {
+  const term = (search?.value || '').trim().toLowerCase();
 
-modalX.addEventListener('click', closeModal);
-window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+  let data = PLANTS.filter(p =>
+    p.name.toLowerCase().includes(term) ||
+    p.category.toLowerCase().includes(term)
+  );
 
-function render(){
-  const term = search.value.trim();
-
-  let data = PLANTS.slice();
-  if (term){
-    data = data.filter(p => p.name.includes(term));
-  }
-  // sort by name
-  data.sort((a,b)=> a.name.localeCompare(b.name));
+  // Gujarati-friendly sort
+  data.sort((a, b) => a.name.localeCompare(b.name, 'gu'));
 
   grid.innerHTML = '';
- 
- for (const p of data){
+
+  for (const p of data) {
     const card = document.createElement('div');
     card.className = 'card';
- 
-   card.innerHTML = `
+    card.innerHTML = `
       <img src="${p.image}" alt="${p.name}">
       <div class="content">
-       
- <div class="badge">${p.category}</div>
-      
-  <h3>${p.name}</h3>
-       
- <div class="count">સંખ્યા: ${p.count}</div>
-  
-    </div>`;
-    card.addEventListener('click', ()=>openModal(p));
-
+        <div class="badge">${p.category}</div>
+        <h3>${p.name}</h3>
+        <div class="count">સંખ્યા: ${p.count}</div>
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(p));
     grid.appendChild(card);
   }
 
-  const total = PLANTS.reduce((s,x)=>s+x.count,0);
- 
-
- stats.textContent = `કુલ જાત: ${PLANTS.length} | કુલ સંખ્યા: ${total}`;
+  const totalCount = PLANTS.reduce((s, x) => s + (Number(x.count) || 0), 0);
+  stats.textContent = `કુલ જાત: ${PLANTS.length} | કુલ સંખ્યા: ${totalCount}`;
 }
 
-search.addEventListener('input', render);
+search && search.addEventListener('input', render);
 render();
 
+// ====== Random highlight (every 3s) ======
+const box = document.getElementById('randomBox');
+function showRandomData() {
+  if (!box) return;
+  const random = PLANTS[Math.floor(Math.random() * PLANTS.length)];
+  box.innerHTML = `
+    <img src="${random.image}" alt="${random.name}">
+    <h3>${random.name}</h3>
+    <p>${random.benefits}</p>
+  `;
+}
+showRandomData();
+setInterval(showRandomData, 3000);
 
+// ====== Sidebar (guarded) ======
+(function () {
+  const sidebar = document.getElementById('sidebar');
+  const openBtn = document.getElementById('hamburger');
+  const closeBtn = document.getElementById('sidebarClose');
+  const backdrop = document.getElementById('sidebarBackdrop');
+
+  if (!sidebar) return; // important guard
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    openBtn && openBtn.setAttribute('aria-expanded', 'true');
+    sidebar.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    openBtn && openBtn.setAttribute('aria-expanded', 'false');
+    sidebar.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openBtn && openBtn.addEventListener('click', openSidebar);
+  closeBtn && closeBtn.addEventListener('click', closeSidebar);
+  backdrop && backdrop.addEventListener('click', closeSidebar);
+
+  // Close on link click
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', closeSidebar));
+
+  // Close on Escape
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
+})();
