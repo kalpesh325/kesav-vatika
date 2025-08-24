@@ -460,7 +460,7 @@ function render() {
 search && search.addEventListener('input', render);
 render();
 
-// ====== Random highlight (every 3s) ======
+// ====== Random highlight (every 10s) ======
 const box = document.getElementById('randomBox');
 function showRandomData() {
   if (!box) return;
@@ -472,7 +472,7 @@ function showRandomData() {
   `;
 }
 showRandomData();
-setInterval(showRandomData, 3000);
+setInterval(showRandomData, 10000);
 
 // ====== Sidebar (guarded) ======
 (function () {
@@ -506,3 +506,4 @@ setInterval(showRandomData, 3000);
   // Close on Escape
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
 })();
+
