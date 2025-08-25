@@ -506,4 +506,8 @@ setInterval(showRandomData, 10000);
   // Close on Escape
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
 })();
-
+// ====== query box ======
+function openquery() {
+    
+      window.open("querybox.html", "_self");
+}
