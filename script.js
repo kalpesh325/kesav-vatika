@@ -453,7 +453,7 @@ function render() {
     grid.appendChild(card);
   }
 
-  const totalCount = PLANTS.reduce((s, x) => s + (Number(x.count) || 0), 0);
+  const totalCount = PLANT.reduce((s, x) => s + (Number(x.count) || 0), 0);
   stats.textContent = `કુલ જાત: ${PLANTS.length} | કુલ સંખ્યા: ${totalCount}`;
 }
 
@@ -511,3 +511,4 @@ function openquery() {
     
       window.open("querybox.html", "_self");
 }
+
