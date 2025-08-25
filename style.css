@@ -1,3 +1,54 @@
+/* ========== query box ========== */
+/* पूरा-पेज मा bottom-center fixed button */
+#queryBox{
+  position: fixed;       
+  left: 90%;            
+  transform: translateX(-50%); 
+  bottom: 20px;          
+  z-index: 9999;
+
+
+  /* visual */
+  padding: 12px 18px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fff, #f0f0f0);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+}
+ 
+ /* horizontally centre */
+/* centre exact */
+/* તળિયાંથી distance - માંગे તઇ બદલી શકો */
+
+
+
+/* hover effect */
+#queryBox:hover{
+  transform: translateX(-50%) translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  opacity: 0.98;
+background: #fff;
+color :red;
+}
+
+/* focus (keyboard accessibility) */
+#queryBox:focus{
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 4px;
+}
+
+/* responsive tweak: chhota screens par button thodu chhoto karvo */
+@media (max-width:420px){
+  #queryBox{
+    bottom: 14px;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+}
 /* ========== code ========== */
    body { font-family: 'Noto Sans Gujarati', sans-serif; background:#f6f7fb; }
     .random-box {
@@ -380,3 +431,4 @@ body {
   }
 
   .topbar {
+
