@@ -1,0 +1,231 @@
+﻿<!-- Example HTML: copy this into an .html file -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>query box</title>
+<style>
+/* ===== Badiya form CSS ===== */
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --accent:#3b82f6;
+  --muted:#6b7280;
+  --success:#10b981;
+  --radius:12px;
+  --shadow: 0 6px 24px rgba(13,38,59,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Page center */
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(180deg, var(--bg), #eef2fb 70%);
+  padding:32px;
+}
+
+/* Card */
+.form-card{
+  width:100%;
+  max-width:520px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:28px;
+  box-sizing:border-box;
+}
+
+/* Head */
+.form-card h2{
+  margin:0 0 8px 0;
+  font-size:20px;
+  letter-spacing:0.2px;
+  color:#0f172a;
+}
+.form-card p.lead{
+  margin:0 0 18px 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Layout grid for fields */
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.row.full{ grid-template-columns:1fr; }
+
+/* Input style */
+.input,
+.select,
+.textarea{
+  width:100%;
+  display:block;
+  background:#fbfdff;
+  border:1px solid #e6eef8;
+  padding:12px 14px;
+  border-radius:10px;
+  box-sizing:border-box;
+  font-size:14px;
+  color:#0b1220;
+  transition:all .18s ease;
+  outline:none;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus{
+  box-shadow:0 6px 18px rgba(59,130,246,0.12);
+  border-color:var(--accent);
+  transform:translateY(-1px);
+}
+
+/* Floating label (simple) */
+.field{
+  position:relative;
+}
+.field label{
+  font-size:12px;
+  color:var(--muted);
+  display:block;
+  margin-bottom:6px;
+}
+
+/* Textarea */
+.textarea{
+  min-height:110px;
+  resize:vertical;
+  padding-top:12px;
+}
+
+/* Small helper / error text */
+.small{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* Button */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:12px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  box-shadow:0 8px 20px rgba(59,130,246,0.14);
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn:active{ transform:translateY(0); opacity:0.96; }
+
+/* Secondary button */
+.btn.ghost{
+  background:transparent;
+  border:1px solid #e6eef8;
+  color: #0f172a;
+  box-shadow:none;
+}
+
+/* Small responsive */
+@media (max-width:640px){
+  .row{ grid-template-columns:1fr; }
+  .form-card{ padding:20px; margin:6px; }
+}
+</style>
+</head>
+<body>
+
+<div class="form-card">
+  <h2>query box</h2>
+ 
+  <form id="dataForm"  >
+    <div class="row">
+      <div class="field">
+        <label for="name">Naam</label>
+        <input id="name" name="name"class="input" type="text" placeholder="Tamāro naam" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">Mobile</label>
+<input
+  id="phone"
+  class="input" name="mobile"type="tel" inputmode="numeric" pattern="^\d{10}$" maxlength="10" placeholder="10 ank (e.g. 9876543210)" aria-label="Mobile number" required>
+        
+      </div>
+    </div>
+
+    <div class="row full" style="margin-top:12px;">
+      <div class="field">
+        <label for="email">Email (optional)</label>
+        <input id="email" class="input"name="email" type="email" placeholder="you@example.com">
+      </div>
+    </div>
+
+    <div class="row full" style="margin-top:12px;">
+      <div class="field">
+        <label for="message">your query</label>
+        <textarea id="message" class="textarea"name="query" placeholder="enter your query..." required></textarea>
+        <div class="small">200 character sudhi (optional)</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:16px; justify-content:flex-end;">
+      <button alert("submit Successfully") type="submit" class="btn">submit</button>
+    </div>
+  </form>
+</div>
+
+
+<p id="msg"></p>
+
+<!-- Only-numbers mobile input (Indian 10-digit example) -->
+
+<script>
+const phone = document.getElementById('phone');
+
+// 1) Real-time: non-digit hataavo ane max 10 rakho
+phone.addEventListener('input', e => {
+  const cleaned = e.target.value.replace(/\D/g, '').slice(0, 10);
+  if (e.target.value !== cleaned) e.target.value = cleaned;
+});
+
+// 2) Form submit validation (extra safety)
+document.querySelector('form')?.addEventListener('submit', function(ev){
+  const v = phone.value.replace(/\D/g,'');
+  if (!/^\d{10}$/.test(v)) {
+    ev.preventDefault();
+    phone.focus();
+    phone.setCustomValidity('Kripya 10 ankno valid mobile number mukho.');
+    phone.reportValidity();
+    // clear custom validity after user changes
+    phone.addEventListener('input', () => phone.setCustomValidity(''), { once: true });
+  }
+});
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbzCJl00tkG08bAFh244l4ThZTP7v9rp-PDU5P94rAxbKvpZbByvs0o6AhsIAe8d8QUZ/exec"; // यहां WebApp URL डालना है
+    const form = document.getElementById("dataForm");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form)})
+       
+      .then(response => document.getElementById("msg").innerHTML="✅ Data Saved Successfully!")
+        .catch(error => document.getElementById("msg").innerHTML="❌ Error: " + error.message);
+    }); 
+
+
+</script>
+
+</body>
+</html>
