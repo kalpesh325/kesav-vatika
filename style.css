@@ -101,7 +101,7 @@ body {
   gap: 12px;
   align-items: center;
   justify-content: space-between;
-  background: #ffffffcc;
+  background: black;
   backdrop-filter: blur(6px);
   border-bottom: 1px solid #e5e7eb;
 }
@@ -110,6 +110,7 @@ body {
   font-size: 24px;
   font-weight: 800;
   letter-spacing: .5px;
+  color :red ;
 }
 
 .topbar input {
@@ -431,4 +432,5 @@ body {
   }
 
   .topbar {
+
 
