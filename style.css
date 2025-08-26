@@ -49,14 +49,14 @@ color :red;
     border-radius: 8px;
   }
 }
-/* ========== code ========== */
+/* ==========random  box ========== */
    body { font-family: 'Noto Sans Gujarati', sans-serif; background:#f6f7fb; }
     .random-box {
       width: 100%;
       margin: 40px auto;
       padding: 5px;
       border-radius: 12px;
-      background: #fff;
+      background: #B8860B;
       box-shadow: 0 4px 12px rgba(0,0,0,.1);
       text-align: center;
       transition: all .5s ease;
@@ -432,6 +432,7 @@ body {
   }
 
   .topbar {
+
 
 
 
