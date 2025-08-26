@@ -86,7 +86,7 @@ color :red;
 
 body {
   font-family: 'Noto Sans Gujarati', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #f6f7fb;
+  background: #fdf6e3;
   color: #111;
   line-height: 1.5;
 }
@@ -432,5 +432,6 @@ body {
   }
 
   .topbar {
+
 
 
