@@ -124,7 +124,7 @@
     "category": "ફૂલ છોડ",
     "count": 19,
     "benefits": "પાન અને કોપરાંમાં રંગ; પરંપરાગત રીતે સૌંદર્ય અને ઠંડક માટે વપરાય.",
-    "image": "images/flowers/medi.jpg"
+    "image": "images/flowers/medi.webp"
   },
  
  {
@@ -511,5 +511,6 @@ function openquery() {
     
       window.open("querybox.html", "_self");
 }
+
 
 
