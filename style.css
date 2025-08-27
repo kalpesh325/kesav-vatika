@@ -6,8 +6,6 @@
   transform: translateX(-50%); 
   bottom: 20px;          
   z-index: 9999;
-
-
   /* visual */
   padding: 12px 18px;
   font-size: 20px;
@@ -18,13 +16,6 @@
   cursor: pointer;
   transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
 }
- 
- /* horizontally centre */
-/* centre exact */
-/* તળિયાંથી distance - માંગे તઇ બદલી શકો */
-
-
-
 /* hover effect */
 #queryBox:hover{
   transform: translateX(-50%) translateY(-4px) scale(1.01);
@@ -33,13 +24,11 @@
 background: #fff;
 color :red;
 }
-
 /* focus (keyboard accessibility) */
 #queryBox:focus{
   outline: 3px solid rgba(59,130,246,0.18);
   outline-offset: 4px;
 }
-
 /* responsive tweak: chhota screens par button thodu chhoto karvo */
 @media (max-width:420px){
   #queryBox{
@@ -69,14 +58,6 @@ color :red;
     }
     .random-box h3{ margin: 10px 0 5px; font-size: 18px; }
     .random-box p{ font-size: 14px; color:#555; }
-  
-
-
-
-  
-
-
-
 /* ========== Global Reset ========== */
 * {
   box-sizing: border-box;
@@ -90,7 +71,6 @@ body {
   color: #111;
   line-height: 1.5;
 }
-
 /* ========== Topbar ========== */
 .topbar {
   position: sticky;
@@ -105,14 +85,12 @@ body {
   backdrop-filter: blur(6px);
   border-bottom: 1px solid #e5e7eb;
 }
-
 .topbar h1 {
   font-size: 24px;
   font-weight: 800;
   letter-spacing: .5px;
   color :red ;
 }
-
 .topbar input {
   flex: 1;
   max-width: 250px;
@@ -122,12 +100,10 @@ body {
   outline: none;
   font-size: 15px;
 }
-
 .topbar input:focus {
   border-color: #8b5cf6;
   box-shadow: 0 0 0 3px rgba(139, 92, 246, .15);
 }
-
 /* ========== Stats ========== */
 .stats {
   padding: 12px 18px;
@@ -135,7 +111,6 @@ body {
   font-size: 14px;
   font-weight: 600;
 }
-
 /* ========== Grid ========== */
 .grid {
   display: grid;
@@ -143,7 +118,6 @@ body {
   gap: 16px;
   padding: 16px;
 }
-
 /* ========== Card ========== */
 .card {
   background: #fff;
@@ -153,29 +127,24 @@ body {
   cursor: pointer;
   transition: transform .1s ease, box-shadow .15s ease;
 }
-
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
-
 .card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
   background: #f1f5f9;
 }
-
 .card .content {
   padding: 12px;
 }
-
 .card h3 {
   margin: 8px 0 6px 0;
   font-size: 16px;
   font-weight: 600;
 }
-
 /* ========== Badge, Count, Benefits ========== */
 .badge {
   display: inline-block;
@@ -186,39 +155,33 @@ body {
   font-size: 12px;
   font-weight: 500;
 }
-
 .count {
   font-weight: 700;
   margin-top: 6px;
   color: #334155;
   font-size: 14px;
 }
-
 .benefits {
   font-size: 14px;
   line-height: 1.6;
   color: #374151;
   margin-top: 6px;
 }
-
 /* ========== Modal ========== */
 .modal.hidden {
   display: none;
 }
-
 .modal {
   position: fixed;
   inset: 0;
   display: grid;
   place-items: center;
 }
-
 .modal-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, .4);
 }
-
 .modal-card {
   position: relative;
   z-index: 1;
@@ -230,30 +193,25 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
   animation: fadeIn .25s ease;
 }
-
 .modal-card img {
   width: 100%;
   height: 420px;
   object-fit: cover;
   background: #f1f5f9;
 }
-
 .modal-body {
   padding: 18px 20px;
 }
-
 .modal-body h2 {
   margin: 4px 0 8px 0;
   font-size: 22px;
   font-weight: 700;
 }
-
 .modal-body .meta {
   color: #475569;
   margin-bottom: 10px;
   font-size: 14px;
 }
-
 /* ========== Close Button ========== */
 .close {
   position: absolute;
@@ -269,11 +227,9 @@ body {
   line-height: 1;
   transition: background .2s;
 }
-
 .close:hover {
   background: #fff;
 }
-
 /* ========== Footer ========== */
 .footer {
   padding: 18px;
@@ -283,14 +239,11 @@ body {
   border-top: 1px solid #e5e7eb;
   margin-top: 20px;
 }
-
 /* ========== Animations ========== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-
 /* =======================
    Responsive Nav (Mobile sidebar + Desktop inline)
    ======================= */
@@ -307,11 +260,9 @@ body {
   cursor: pointer;
   transition: transform .1s ease, box-shadow .15s ease;
 }
-
 .hamburger:active {
   transform: scale(0.98);
 }
-
 .nav-buttons {
   display: flex;
   gap: 10px;
@@ -319,7 +270,6 @@ body {
   margin-left: auto;
   margin-right: 12px;
 }
-
 .nav-buttons a {
   flex: 1;
   min-width: 90px;
@@ -334,7 +284,6 @@ body {
   color: #333;
   transition: all .25s ease;
 }
-
 .nav-buttons a:hover {
   background: #8b5cf6;
   color: #fff;
@@ -342,7 +291,6 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
-
 /* Sidebar base (hidden by default) */
 .sidebar {
   position: fixed;
@@ -350,17 +298,14 @@ body {
   z-index: 40;
   display: none; /* hidden by default */
 }
-
 .sidebar.open {
   display: block;
 }
-
 .sidebar-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,.45);
 }
-
 .sidebar-panel {
   position: absolute;
   top: 0;
@@ -374,11 +319,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 .sidebar.open .sidebar-panel {
   transform: translateX(0);
 }
-
 .sidebar-head {
   display: flex;
   align-items: center;
@@ -387,7 +330,6 @@ body {
   border-bottom: 1px solid #e5e7eb;
   font-weight: 700;
 }
-
 .sidebar-close {
   width: 36px;
   height: 36px;
@@ -397,13 +339,11 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
-
 .sidebar-links {
   display: grid;
   gap: 8px;
   padding: 12px;
 }
-
 .sidebar-links a {
   display: block;
   padding: 10px 12px;
@@ -414,25 +354,16 @@ body {
   font-weight: 600;
   transition: background .2s ease, color .2s ease, transform .1s ease;
 }
-
 .sidebar-links a:hover {
   background: #f5f3ff;
   color: #4c1d95;
   transform: translateY(-1px);
 }
-
 /* Show hamburger on small screens, hide desktop nav */
 @media (max-width: 768px) {
   .hamburger {
     display: inline-flex;
   }
-
-  .nav-buttons {
+.nav-buttons {
     display: none;
   }
-
-  .topbar {
-
-
-
-
