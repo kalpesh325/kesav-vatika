@@ -1,0 +1,30 @@
+name: Convert JPG to WebP
+
+on:
+  push:
+    paths:
+      - "**.jpg"
+      - "**.jpeg"
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install WebP tools
+        run: sudo apt-get install webp -y
+
+      - name: Convert JPG to WebP
+        run: |
+          mkdir -p webp
+          for img in $(find . -name "*.jpg" -o -name "*.jpeg"); do
+            cwebp "$img" -q 80 -o "webp/$(basename "${img%.*}").webp"
+          done
+
+      - name: Upload WebP as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: webp-images
+          path: webp/
