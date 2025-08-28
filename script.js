@@ -341,7 +341,7 @@
     "category": "ઔષધી",
     "count": 9,
     "benefits": "હળવો સુગંધિત છોડ; ઘરઆંગણે તાજગી અને જીવજંતુ ઘટાડે.",
-    "image": "images/medicinal/mitholimado.jpg"
+    "image": "images/medicinal/mitholimdo.jpg"
   }
 ];
 // ====== Data & DOM refs ======
@@ -449,6 +449,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
