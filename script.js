@@ -257,7 +257,7 @@
     "category": "ફળ-ફૂલ",
     "count": 2,
     "benefits": "સુગંધિત સફેદ ફૂલ; નાઈટ-બ્લૂમિંગ જાતો શાંત સુગંધ આપે.",
-    "image": "images/fruitsflowers/tagari.jpg"
+    "image": "images/fruitsflowers/tagri.jpg"
   },
 {
     "name": "પારિજાત",
@@ -449,6 +449,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
