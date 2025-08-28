@@ -201,7 +201,7 @@
     "category": "ફળ-ફૂલ",
     "count": 1,
     "benefits": "હૃદય આરોગ્ય માટે ફાયદાકારક ફળ; સુશોભન મૂલ્ય.",
-    "image": "images/fruitsflowers/dadam.jpg"
+    "image": "images/fruitsflowers/dadm.jpg"
   },
  {
     "name": "રામ ફળી",
@@ -449,6 +449,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
