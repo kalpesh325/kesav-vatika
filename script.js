@@ -362,7 +362,12 @@ function openModal(p) {
   modalTitle.textContent = p.name;
   modalCat.textContent = `વર્ગ: ${p.category}`;
   modalCount.textContent = `સંખ્યા: ${p.count}`;
-  modalBenefits.textContent = `ફાયદા: ${p.benefits}`;
+  modalBenefits.innerHTML = '';
+  p.benefits.split(";").forEach(point => {
+    const li = document.createElement("li");
+    li.textContent = point.trim();
+    modalBenefits.appendChild(li);
+  });
   modal.classList.remove('hidden');
 }
 function closeModal() {
@@ -444,4 +449,5 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
