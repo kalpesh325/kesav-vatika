@@ -117,7 +117,7 @@
     "category": "ફૂલ છોડ",
     "count": 7,
     "benefits": "જામણી પાંદડા; બોર્ડર/હેંગિંગ માટે સુંદર ગ્રાઉન્ડ કવર.",
-    "image": "images/flowers/parplhart.jpg"
+    "image": "images/flowers/parpalhart.jpg"
   },
  {
     "name": "અડુલસા",
@@ -448,6 +448,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
