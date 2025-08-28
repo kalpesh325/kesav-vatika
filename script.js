@@ -413,7 +413,6 @@ function showRandomData() {
   box.innerHTML = `
     <img src="${random.image}" alt="${random.name}">
     <h3>${random.name}</h3>
-    <p>${random.benefits}</p>
   `;
 }
 showRandomData();
@@ -449,6 +448,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
