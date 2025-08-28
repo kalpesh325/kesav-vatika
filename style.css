@@ -120,7 +120,7 @@ body {
 }
 /* ========== Card ========== */
 .card {
-  background: #fff;
+  background: #B8860B;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   overflow: hidden;
@@ -367,3 +367,4 @@ body {
 .nav-buttons {
     display: none;
   }
+
