@@ -357,6 +357,7 @@ const modalBenefits = document.getElementById('modalBenefits');
 const modalClose = document.getElementById('modalClose');
 const modalX = document.getElementById('modalX');
 // ====== Modal ======
+ let points = PLANTS[0].benefits.split(";");
 function openModal(p) {
   modalImg.src = p.image;
   modalTitle.textContent = p.name;
@@ -449,5 +450,6 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
