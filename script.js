@@ -187,7 +187,7 @@
     "category": "વૃક્ષ-અન્ય",
     "count": 3,
     "benefits": "ઝડપી વૃદ્ધિ; માટી બાથું રાખે, હવા શુદ્ધીકરણ.",
-    "image": "images/trees/vansh.jpg"
+    "image": "images/trees/vans.jpg"
   },
  {
     "name": "શેતૂર",
@@ -449,6 +449,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
