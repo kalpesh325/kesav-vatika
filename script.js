@@ -110,7 +110,7 @@
     "category": "ફૂલ છોડ",
     "count": 19,
     "benefits": "પાન અને કોપરાંમાં રંગ; પરંપરાગત રીતે સૌંદર્ય અને ઠંડક માટે વપરાય.",
-    "image": "images/flowers/medi.webp"
+    "image": "images/flowers/medi.jpg"
   },
  {
     "name": "પર્પલ હાર્ટ",
@@ -444,3 +444,4 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
