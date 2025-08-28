@@ -162,7 +162,7 @@
     "image": "images/trees/gundi.jpg"
   },
  {
-    "name": "કાણજી",
+    "name": "કણજી",
     "category": "વૃક્ષ-અન્ય",
     "count": 1,
     "benefits": "ગ્રામ્ય વિસ્તારમાં સામાન્ય; છાયો અને જમીનની ધારાપકતા વધે.",
@@ -448,6 +448,7 @@ setInterval(showRandomData, 10000);
 function openquery() {
           window.open("querybox.html", "_self");
 }
+
 
 
 
