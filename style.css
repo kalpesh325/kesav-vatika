@@ -249,14 +249,14 @@ body {
    ======================= */
 .hamburger {
   display: none;
+  color:white;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   font-size: 22px;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
+  background: black;
   cursor: pointer;
   transition: transform .1s ease, box-shadow .15s ease;
 }
@@ -367,4 +367,5 @@ body {
 .nav-buttons {
     display: none;
   }
+
 
